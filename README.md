@@ -1,4 +1,4 @@
-##Welcome to the Heatmaps Demo for U of T Coders!
+## Welcome to the Heatmaps Demo for U of T Coders!
 
 This repo is for the R: Plotting with the theme of Heatmaps lesson.
 
