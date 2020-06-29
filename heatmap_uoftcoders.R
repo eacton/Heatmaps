@@ -35,7 +35,6 @@ str(genes)
 str(annotation_col)
 str(annotation_row)
 
-
 #Plotting with pheatmap!
 
 pheatmap(genes)
@@ -76,6 +75,13 @@ pheatmap(genes[c(1:5, 55:60), c(1:5, 20:35, 55:60)], fontsize = 8, fontsize_row 
 
 #font size in cells
 pheatmap(genes[c(1:5, 55:60), c(1:5, 20:35, 55:60)], fontsize = 10, fontsize_row = 8, fontsize_col = 8, cluster_rows = T, cluster_cols = T, annotation_row = annotation_row, annotation_col = annotation_col, main = "Gene Expression for Drug X Trial for B-Cell vs T-Cell Patients", display_numbers = TRUE, fontsize_number = 8)
+
+#add annotation colours
+annotation_colors <- list(
+  Type = c('B-cell'="cornflowerblue", 'T-cell'="orange"),
+  Exposure = c('X=0'="yellow", 'X=1'="red"))
+
+pheatmap(genes[c(1:5, 55:60), c(1:5, 20:35, 55:60)], fontsize = 10, fontsize_row = 8, fontsize_col = 8, cluster_rows = T, cluster_cols = F, annotation_row = annotation_row, annotation_col = annotation_col, annotation_colors = annotation_colors, main = "Gene Expression for Drug X Trial for B-Cell vs T-Cell Patients", display_numbers = TRUE, fontsize_number = 8, gaps_col = 5)
 
 #gap between exposure and treatment
 pheatmap(genes[c(1:5, 55:60), c(1:5, 20:35, 55:60)], fontsize = 10, fontsize_row = 8, fontsize_col = 8, cluster_rows = T, cluster_cols = F, annotation_row = annotation_row, annotation_col = annotation_col, main = "Gene Expression for Drug X Trial for B-Cell vs T-Cell Patients", display_numbers = TRUE, fontsize_number = 8, gaps_col = 5)
